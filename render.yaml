@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: umapathi-portfolio-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DEBUG
+        value: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: '["https://portfolio-self-two-97.vercel.app","https://umapathi.dev"]'
+      - key: ALLOWED_HOSTS
+        value: '["umapathi-portfolio-api.onrender.com"]'
+      - key: CONTACT_EMAIL
+        value: umapathiu0911@gmail.com
